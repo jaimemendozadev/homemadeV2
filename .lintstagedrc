@@ -1,3 +1,3 @@
 {
-  "App/**/*.{js,ts,tsx}": ["yarn run validate"]
+  "App/**/*.{js,ts,tsx}": ["yarn run lint", "tsc --noEmit"]
 }

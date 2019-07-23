@@ -12,7 +12,8 @@ const calculate = (num1: number, num2: number): number => {
 const Counter = (Props: IncomingProps) => (
   <View>
     <Text>
-      The current count is {calculate(Props.numbers[0], Props.numbers[1])}
+      The current count is
+      {calculate(Props.numbers[0], Props.numbers[1])}
     </Text>
   </View>
 );
