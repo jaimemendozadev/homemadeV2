@@ -5,14 +5,13 @@
   "scripts": {
     "clear:nodemod": "rm -rf node_modules/ && yarn cache clean && yarn install",
     "clear:pods": "cd ios && rm -rf build && pod deintegrate && pod clean && pod install && cd ..",
-    "format": "yarn run prettier --write",
+    "eslint": "./node_modules/.bin/eslint --fix",
     "start": "react-native start",
     "test": "jest",
-    "lint": "eslint --fix './App/**/*.{js,jsx,tsx,ts}'",
-    "prettier": "prettier 'App/**/*.{js,jsx,tsx,ts}'",
+    "lint": "yarn run eslint './App/**/*.{js,jsx,tsx,ts}'",
     "rm:build": "rm -rfv ios/build",
     "nu:clear": "watchman watch-del-all && rm -rf $TMPDIR/react-native-packager-cache-* && rm -rf $TMPDIR/metro-bundler-cache-* && yarn run clear:nodemod && yarn run rm:build",
-    "validate": "tsc && yarn run lint && yarn run format"
+    "validate": "yarn run lint && tsc --noEmit"
   },
   "dependencies": {
     "react": "16.8.6",
@@ -26,10 +25,16 @@
     "@types/react": "^16.8.23",
     "@types/react-native": "^0.60.2",
     "@types/react-test-renderer": "^16.8.3",
+    "@typescript-eslint/eslint-plugin": "^1.13.0",
+    "@typescript-eslint/parser": "^1.13.0",
     "babel-jest": "^24.8.0",
     "eslint": "^6.1.0",
+    "eslint-config-prettier": "^6.0.0",
+    "eslint-plugin-prettier": "^3.1.0",
+    "eslint-plugin-react": "^7.14.3",
     "jest": "^24.8.0",
     "metro-react-native-babel-preset": "^0.55.0",
+    "prettier": "^1.18.2",
     "react-test-renderer": "16.8.6",
     "typescript": "^3.5.3"
   },
