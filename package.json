@@ -11,11 +11,12 @@
     "lint": "yarn run eslint './App/**/*.{js,jsx,tsx,ts}'",
     "rm:build": "rm -rfv ios/build",
     "nu:clear": "watchman watch-del-all && rm -rf $TMPDIR/react-native-packager-cache-* && rm -rf $TMPDIR/metro-bundler-cache-* && yarn run clear:nodemod",
-    "validate": "yarn run lint && tsc --noEmit"
+    "validate": "yarn run lint"
   },
   "dependencies": {
     "react": "16.8.6",
-    "react-native": "0.60.4"
+    "react-native": "0.60.4",
+    "react-native-router-flux": "^4.0.6"
   },
   "devDependencies": {
     "@babel/core": "^7.5.5",
