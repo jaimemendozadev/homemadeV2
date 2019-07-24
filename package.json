@@ -3,14 +3,14 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "clear:nodemod": "rm -rf node_modules/ && yarn cache clean && yarn install",
-    "clear:pods": "cd ios && rm -rf build && pod deintegrate && pod clean && pod install && cd ..",
+    "clear:ios": "cd ios && pod deintegrate && pod clean && pod install && cd ..",
+    "clear:nodemod": "rm -rf node_modules/ && rm -rfv package-lock.json && rm -rfv yarn.lock && yarn cache clean && yarn install",
     "eslint": "./node_modules/.bin/eslint --fix",
     "start": "react-native start",
     "test": "jest",
     "lint": "yarn run eslint './App/**/*.{js,jsx,tsx,ts}'",
     "rm:build": "rm -rfv ios/build",
-    "nu:clear": "watchman watch-del-all && rm -rf $TMPDIR/react-native-packager-cache-* && rm -rf $TMPDIR/metro-bundler-cache-* && yarn run clear:nodemod && yarn run rm:build",
+    "nu:clear": "watchman watch-del-all && rm -rf $TMPDIR/react-native-packager-cache-* && rm -rf $TMPDIR/metro-bundler-cache-* && yarn run clear:nodemod",
     "validate": "yarn run lint && tsc --noEmit"
   },
   "dependencies": {
